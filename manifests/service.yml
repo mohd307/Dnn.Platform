@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "cont"
+    labels:
+        app: "cont"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 1
+      targetPort: http
+      protocol: TCP
+      name: http
+    selector:
+        app: "cont"
