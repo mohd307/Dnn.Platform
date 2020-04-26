@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "cont"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "cont"
+    spec:
+      containers:
+        - name: "cont"
+          image: "dnncont.azurecr.io/cont"
+          ports:
+          - containerPort: 1
